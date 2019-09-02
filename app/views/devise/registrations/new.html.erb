@@ -10,7 +10,7 @@
                 <div class="row login_form" id="contactForm">
                   <div class="col-md-12 form-group">
                     <%= f.label :email %>
-                    <%= f.email_field :email, autofocus: true, class: "form-control", id: "name", name: "name" %>
+                    <%= f.email_field :email, autofocus: true, class: "form-control" %>
                   </div>
 
                   <div class="col-md-12 form-group">
@@ -18,12 +18,12 @@
                     <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %>
-                    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id: "name", name: "name" %>
+                    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
                   </div>
 
                   <div class="col-md-12 form-group">
                     <%= f.label :password_confirmation %>
-                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "name", name: "name" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
                   </div>
 
                   <div class="col-md-12 form-group">
