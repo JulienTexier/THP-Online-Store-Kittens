@@ -9311,4 +9311,13 @@ a.text-dark:hover {
     }
 }
 
+.banner {
+    color:black;
+    background-color:white;
+    background-image:url(banner/common-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
 /*# sourceMappingURL=bootstrap.min.css.map */
