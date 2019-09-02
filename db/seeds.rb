@@ -8,6 +8,6 @@
 
 Item.destroy_all
 
-10.times do 
-  Item.create(title: Faker::Book.title, description: Faker::Movie.quote, price: Faker::Number.decimal(l_digits: 2), image_url: Faker::LoremPixel.image)
+20.times do 
+  Item.create(title: Faker::Book.title, description: Faker::Movie.quote, price: Faker::Number.decimal(l_digits: 2), image_url: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "bmp", set: "set4"))
 end
