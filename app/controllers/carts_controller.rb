@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show]
+  before_action :redirect_to_root, if: :not_current_user_cart?
 
   # GET /carts
   # GET /carts.json
@@ -71,5 +73,13 @@ class CartsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
       params.fetch(:cart, {})
+    end
+
+    def not_current_user_cart?
+      return params[:id].to_i != current_user.cart.id
+    end
+
+    def redirect_to_root
+      redirect_to items_path
     end
 end

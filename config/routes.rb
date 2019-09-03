@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	root 'items#index'
 
 	resources :join_table_carts_items
-  resources :carts
+  resources :carts, except: [:index]
 
   resources :items
   devise_for :users
