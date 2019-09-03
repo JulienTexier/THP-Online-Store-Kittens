@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   //------- Active Nice Select --------//
 
-    $('select').niceSelect();
+    // $('select').niceSelect();
 
 
     $('.navbar-nav li.dropdown').hover(function() {
@@ -23,12 +23,12 @@ $(document).ready(function(){
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     });
 
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        gallery:{
-        enabled:true
-        }
-    });
+    // $('.img-pop-up').magnificPopup({
+    //     type: 'image',
+    //     gallery:{
+    //     enabled:true
+    //     }
+    // });
 
     // Search Toggle
     $("#search_input_box").hide();
@@ -43,58 +43,58 @@ $(document).ready(function(){
     /*==========================
 		javaScript for sticky header
 		============================*/
-			$(".sticky-header").sticky();
+			// $(".sticky-header").sticky();
 
     /*=================================
     Javascript for banner area carousel
     ==================================*/
-    $(".active-banner-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
-        dots:false
-    });
+    // $(".active-banner-slider").owlCarousel({
+    //     items:1,
+    //     autoplay:false,
+    //     autoplayTimeout: 5000,
+    //     loop:true,
+    //     nav:true,
+    //     navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
+    //     dots:false
+    // });
 
     /*=================================
     Javascript for product area carousel
     ==================================*/
-    $(".active-product-area").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
-    });
+    // $(".active-product-area").owlCarousel({
+    //     items:1,
+    //     autoplay:false,
+    //     autoplayTimeout: 5000,
+    //     loop:true,
+    //     nav:true,
+    //     navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+    //     dots:false
+    // });
 
     /*=================================
     Javascript for single product area carousel
     ==================================*/
-    $(".s_Product_carousel").owlCarousel({
-      items:1,
-      autoplay:false,
-      autoplayTimeout: 5000,
-      loop:true,
-      nav:false,
-      dots:true
-    });
+    // $(".s_Product_carousel").owlCarousel({
+    //   items:1,
+    //   autoplay:false,
+    //   autoplayTimeout: 5000,
+    //   loop:true,
+    //   nav:false,
+    //   dots:true
+    // });
     
     /*=================================
     Javascript for exclusive area carousel
     ==================================*/
-    $(".active-exclusive-product-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
-    });
+    // $(".active-exclusive-product-slider").owlCarousel({
+    //     items:1,
+    //     autoplay:false,
+    //     autoplayTimeout: 5000,
+    //     loop:true,
+    //     nav:true,
+    //     navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+    //     dots:false
+    // });
 
     //--------- Accordion Icon Change ---------//
 
@@ -178,9 +178,9 @@ $(document).ready(function(){
 
 
 
-    $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    });   
+    // $(document).ready(function() {
+    //     $('#mc_embed_signup').find('form').ajaxChimp();
+    // });   
 
 
 
