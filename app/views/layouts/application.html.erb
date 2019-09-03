@@ -11,10 +11,12 @@
 
   </head>
 
-  <body>
-     <body>
+  <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+
     <!-- Start Header Area -->
-  <header class="header_area sticky-header">
+  <header class="header_area">
+   
+
     <%= render 'layouts/navbar' %>
 
   </header>
@@ -23,5 +25,8 @@
     <%= yield %>
     <%= render 'layouts/footer'%>
   </body>
+  
+
+
 </html>
 

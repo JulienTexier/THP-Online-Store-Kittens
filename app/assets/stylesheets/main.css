@@ -8,11 +8,73 @@
 /* Section Gaps css
 ============================================================================================ */
 
+
+
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%!important;
+  opacity: 0.83;
+}
+
+
+
+
 .banner-add {
     background: url(back-chat2.jpg) center no-repeat;
     background-size: cover;
     position: relative;
 }
+
+@media (max-width: 768px) {
+    .banner-add .fullscreen {
+      height: 650px !important; } }
+  .banner-add .active-banner-slider .owl-nav {
+    position: absolute;
+    right: 0;
+    bottom: -200px; }
+    @media (max-width: 1920px) {
+      .banner-add .active-banner-slider .owl-nav {
+        right: -115px; } }
+    @media (max-width: 1680px) {
+      .banner-add .active-banner-slider .owl-nav {
+        right: 0px; } }
+    @media (max-width: 991px) {
+      .banner-add .active-banner-slider .owl-nav {
+        display: none; } }
+    .banner-add .active-banner-slider .owl-nav .owl-prev,
+    .banner-add .active-banner-slider .owl-nav .owl-next {
+      display: inline-block;
+      margin: 10px;
+      opacity: .5;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+      .banner-add .active-banner-slider .owl-nav .owl-prev:hover,
+      .banner-add .active-banner-slider .owl-nav .owl-next:hover {
+        opacity: 1; }
+  .banner-add .banner-content {
+    padding-left: 10px; }
+    @media (max-width: 991px) {
+      .banner-add .banner-content {
+        padding-left: 0; } }
+    .banner-add .banner-content h1 {
+      font-size: 60px;
+      line-height: 66px;
+      font-weight: 700;
+      margin-bottom: 30px; }
+      @media (max-width: 767px) {
+        .banner-add .banner-content h1 {
+          font-size: 35px;
+          line-height: 46px; } }
+    .banner-add .banner-content p {
+      margin: 0; }
+  @media (max-width: 991px) {
+    .banner-add .banner-img {
+      display: none; } }
 
 .h1home {
   color: white;
@@ -22,7 +84,7 @@
 
 .text-banner{
       padding-left: 15px;
-    font-size: 12px;
+    font-size: 17px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     color: white;
@@ -1033,6 +1095,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease 0s; }
   .header_area .main_menu .main_box {
     background: #fff;
+
     margin: 0px auto 0;
     max-width: 1200px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -1227,7 +1290,7 @@ h1, h2, h3, h4, h5, h6 {
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../img/banner/banner-bg.jpg) center no-repeat;
+  background: url(back-chat2.jpg) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
