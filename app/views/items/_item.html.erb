@@ -1,0 +1,71 @@
+
+<section class="owl-carousel active-product-area section_gap">
+    <!-- single product slide -->
+    <div class="single-product-slider">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-title">
+              <h1>Latest Products</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <% @items.each do |item| %>
+            <!-- single product -->
+            <div class="col-lg-3 col-md-6">
+              <div class="single-product">
+                <%= link_to item_path(item) do %>
+                  <%= image_tag item.image_url, class:"img-fluid"%>  
+                  
+                  <div class="product-details">
+                     <h6><%= item.title %></h6>
+                    <div class="price">
+                      <h6><%= item.price %>€</h6>
+                    </div>
+                <% end %>
+                  <div class="prd-bottom">
+
+                    <a href="" class="social-info">
+                      <span class="ti-bag"></span>
+                      <p class="hover-text">add to bag</p>
+                    </a>
+                    <a href="" class="social-info">
+                      <span class="lnr lnr-heart"></span>
+                      <p class="hover-text">Wishlist</p>
+                    </a>
+                    <a href="" class="social-info">
+                      <span class="lnr lnr-move"></span>
+                      <p class="hover-text">view more</p>
+                    </a>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+           <% end %>
+        </div>
+
+       </div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
