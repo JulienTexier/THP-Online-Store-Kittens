@@ -2,7 +2,7 @@
     <td>
         <div class="media">
             <div class="d-flex">
-            	<%= image_tag item.image_url, class:"img-fluid"%>  
+            	<%= image_tag item.image_url, class:"img-fluid", style:"width: 152px;"%>  
             </div>
             <div class="media-body">
                 <p><%= item.title %></p>
@@ -17,12 +17,17 @@
             <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
                 class="input-text qty">
             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                class="increase items-count" type="button"><i class="fas fa-chevron-up"></i></button>
+                class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                class="reduced items-count" type="button"><i class="fas fa-chevron-down"></i></button>
+                class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
         </div>
     </td>
     <td>
         <h5>$<%= item.price %></h5>
+    </td>
+    <td>
+    	<%= link_to join_table_carts_item_path(current_user.cart.join_table_carts_items.find_by(item: item)), method: :delete, data: { confirm: 'Are you sure?' } do %>
+		    <i class="fas fa-times-circle text-danger"></i>
+		<% end %>
     </td>
 </tr>

@@ -24,13 +24,19 @@
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ma session</a>
                 <ul class="dropdown-menu">
+                  <li class="nav-item"><%= link_to "Mon profil",  profile_path(current_user.id), class: "nav-link" %></li>
+                  <li class="nav-item"><%= link_to "Mes commandes",  profile_path(current_user.id), class: "nav-link" %></li>
                   <li class="nav-item"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
                 </ul>
               </li>
             <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), carts_path, class:"cart" %></li>
+            <% if current_user %>
+              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), cart_path(current_user.cart), class:"cart" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), new_user_session_path, class:"cart" %></li>
+            <% end %>
             </ul>
           </div>
         </div>
