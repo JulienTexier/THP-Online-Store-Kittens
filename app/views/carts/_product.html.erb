@@ -25,4 +25,9 @@
     <td>
         <h5>$<%= item.price %></h5>
     </td>
+    <td>
+    	<%= link_to join_table_carts_item_path(current_user.cart.join_table_carts_items.find_by(item: item)), method: :delete, data: { confirm: 'Are you sure?' } do %>
+		    <i class="fas fa-times-circle text-danger"></i>
+		<% end %>
+    </td>
 </tr>
