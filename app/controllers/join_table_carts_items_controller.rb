@@ -58,10 +58,10 @@ class JoinTableCartsItemsController < ApplicationController
   # DELETE /join_table_carts_items/1
   # DELETE /join_table_carts_items/1.json
   def destroy
-    @cart = Cart.find(session[:cart_id])
+    #@cart = Cart.find(session[:cart_id])
     @joint_table_carts_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart), notice: 'Join items order was successfully destroyed.' }
+      format.html { redirect_to cart_path(current_user.cart), notice: 'Join items order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
