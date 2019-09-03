@@ -1,22 +1,52 @@
   <!-- start banner Area -->
-<section class="banner-add">
+
+<section class="banner-area">
   <div class="container">
     <br><br><br><br><br>
     <div class="row fullscreen align-items-center justify-content-start">
       <div class="col-lg-12">
-
         <div class="active-banner-slider owl-carousel">
+
+          <br><br>  <br><br><br><br>
           <!-- single-slide -->
           <div class="row single-slide align-items-center d-flex">
             <div class="col-lg-5 col-md-6">
               <div class="banner-content">
                 <div class="h1home">Cat new <br>Collection!</div>
                 <div class="add-bag d-flex align-items-center">
-                  <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-                  <span class="text-banner text-uppercase">Add to Bag</span>
+                  <a class="add-btn" id="myScrollspy" href="#cat_list"><i class="fas fa-arrow-down"></i></a>
+                  <span class="text-banner text-uppercase">Discover our pictures of cats</span>
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-7">
+              <div class="banner-img">
+                <img class="img-fluid" src="img/banner/banner-img.png" alt="">
+              </div>
+            </div>
+
+          </div>
+          <div class="row single-slide">
+              <div class="col-lg-5">
+                <div class="banner-content">
+                  
+                  <br><br><br><br><br><br>
+                  <div class="add-bag d-flex align-items-center">
+                    
+                    <span class="add-text text-uppercase"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="banner-img">
+                  <br><br><br><br><br><br><br><br>
+                </div>
+              </div>
+            </div> 
+
+        </div>
+
       </div>
     </div>
   </div>        
@@ -30,41 +60,41 @@
         <!-- single features -->
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-features">
-            <div class="f-icon">
+            <div class="fas fa-hand-holding-heart">
               <img src="" alt="">
             </div>
-            <h6>Free Delivery</h6>
-            <p>Free Shipping on all order</p>
+            <h6>Free hug</h6>
+            <p>Free hug for any order</p>
           </div>
         </div>
         <!-- single features -->
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-features">
-            <div class="f-icon">
+            <div class="fas fa-undo">
               <img src="" alt="">
             </div>
             <h6>Return Policy</h6>
-            <p>Free Shipping on all order</p>
+            <p>Free hug for any order</p>
           </div>
         </div>
         <!-- single features -->
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-features">
-            <div class="f-icon">
+            <div class="fas fa-phone-alt">
               <img src="" alt="">
             </div>
             <h6>24/7 Support</h6>
-            <p>Free Shipping on all order</p>
+            <p>Free hug for any order</p>
           </div>
         </div>
         <!-- single features -->
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="single-features">
-            <div class="f-icon">
+            <div class="fas fa-coins ">
               <img src="" alt="">
             </div>
             <h6>Secure Payment</h6>
-            <p>Free Shipping on all order</p>
+            <p>Free hug for any order</p>
           </div>
         </div>
       </div>
@@ -72,12 +102,34 @@
   </section>
   <!-- end features Area -->
 
+<div id="cat_list">
 <%= render 'items_list' %>
+</div> 
+
+
+
   
 
 
 
 
-
-
+<script type="text/javascript">
+$(function() {
+    /**
+    * Smooth scrolling to page anchor on click
+    **/
+    $("a[href*='#']:not([href='#'])").click(function() {
+        if (
+            location.hostname == this.hostname
+            && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+        ) {
+            var anchor = $(this.hash);
+            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+            if ( anchor.length ) {
+                $("html, body").animate( { scrollTop: anchor.offset().top }, 900);
+            }
+        }
+    });
+});
+</script>
 
