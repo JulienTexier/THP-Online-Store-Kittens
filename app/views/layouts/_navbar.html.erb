@@ -30,7 +30,11 @@
             <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), carts_path, class:"cart" %></li>
+            <% if current_user %>
+              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), cart_path(current_user.cart), class:"cart" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to raw('<i class="fas fa-shopping-cart"></i>'), new_user_session_path, class:"cart" %></li>
+            <% end %>
             </ul>
           </div>
         </div>
