@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 	resources :join_table_carts_items
   resources :carts, except: [:index]
+  resources :profile, only: [:show, :edit, :update]
 
   resources :items
   devise_for :users
