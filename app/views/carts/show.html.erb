@@ -31,8 +31,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                        	<%@cart.items.each do|item|%>
-                        		<%= render 'product', item: item %>
+                        	<%@cart.items.each_with_index do|item, i|%>
+                        		<%= render 'product', item: item, i: i %>
                         	<% end %>
                             
                             <tr class="bottom_button">
@@ -82,4 +82,3 @@
     <!--================End Cart Area =================-->
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
