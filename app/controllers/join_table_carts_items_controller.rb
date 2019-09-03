@@ -74,7 +74,7 @@ class JoinTableCartsItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joint_table_carts_item_params
-      params.require(:joint_table_carts_item).permit(:item_id)
+      params.fetch(:joint_table_carts_item, {})
     end
 end
 
