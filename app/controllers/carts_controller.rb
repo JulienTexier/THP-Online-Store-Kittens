@@ -4,20 +4,9 @@ class CartsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   before_action :redirect_to_root, if: :not_current_user_cart?
 
-  # GET /carts
-  # GET /carts.json
-  def index
-    @carts = Cart.all
-  end
-
   # GET /carts/1
   # GET /carts/1.json
   def show
-  end
-
-  # GET /carts/new
-  def new
-    @cart = Cart.new
   end
 
   # GET /carts/1/edit
