@@ -7,6 +7,27 @@
 /* Wide Mobile Layout: 480px */
 /* Section Gaps css
 ============================================================================================ */
+
+.banner-add {
+    background: url(back-chat2.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.h1home {
+  color: white;
+  font-size: 120px;
+  line-height: 120px;
+}
+
+.text-banner{
+      padding-left: 15px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
 .no-padding {
   padding: 0; }
 
