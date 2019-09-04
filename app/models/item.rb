@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_one_attached :cat_picture
   validates :title, presence: true, length: { in: 3..100 }
   validates :description, presence: true, length: { minimum: 10 }
   validates :price, presence: true, numericality: { greater_than: 0 }

@@ -17,6 +17,9 @@
   <div class="space"></div>  
     <div class="container text-center">
 
+        <%if @user.user_pic.attached?%>
+          	<%= image_tag @user.user_pic, alt:"marche pas", class:"img-fluid"%>  
+        <% end %> 
 
         <div class="card">
           <div class="card-body">
@@ -51,3 +54,4 @@
 
 
   <div class="space"></div>  
+
