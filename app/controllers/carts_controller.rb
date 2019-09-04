@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   include CurrentCart
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart 
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!
   before_action :redirect_to_root, if: :not_current_user_cart?
 
   # GET /carts/1
