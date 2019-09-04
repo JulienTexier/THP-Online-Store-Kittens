@@ -9,9 +9,7 @@
 Item.destroy_all
 
 20.times do 
-	1.upto(7) do |i|  
-	Item.create(title: Faker::Book.title, description: Faker::Movie.quote, price: Faker::Number.decimal(l_digits: 2), image_url: "chat#{i}.jpeg")
-	end
+	Item.create(title: Faker::Book.title, description: Faker::Movie.quote, price: Faker::Number.decimal(l_digits: 2))
 end
 
 
