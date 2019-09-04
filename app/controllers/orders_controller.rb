@@ -24,10 +24,27 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @amount = (current_user.cart.subtotal * 100).to_i
+  
+    customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+    })
+  
+    charge = Stripe::Charge.create({
+      customer: customer.id,
+      amount: @amount,
+      description: 'Rails Stripe customer',
+      currency: 'eur',
+    })
 
+    @order = Order.new(user: current_user, items: current_user.cart.items)
+    current_user.cart.items.clear
     respond_to do |format|
       if @order.save
+        # current_user.cart.items.each do |item|
+        #   @join = JoinItemsOrder.create(order_id: @order.id, item_id: item.id)
+        # end
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -35,6 +52,10 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
   end
 
   # PATCH/PUT /orders/1
