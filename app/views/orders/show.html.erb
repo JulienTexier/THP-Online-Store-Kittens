@@ -2,3 +2,5 @@
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+
+<h2>Thanks, you paid <strong><%= current_user.cart.subtotal %></strong>!</h2>
