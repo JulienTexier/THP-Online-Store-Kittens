@@ -1,6 +1,6 @@
 	<!-- Start Banner Area -->
 	<section class="banner">
-		<!-- <div class="container"> -->
+		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
 					<h1>Product Details Page</h1>
@@ -10,7 +10,7 @@
 					</nav>
 				</div>
 			</div>
-		<!-- </div> -->
+		</div>
 	</section>
 	<!-- End Banner Area -->
 
@@ -48,9 +48,8 @@
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
 						</div>
-						<% if current_user.is_admin %>
-						<%= link_to 'Edit', edit_admin_item_path(@item) %> |
-						<% end %>
+            <%= link_to 'Edit', edit_admin_item_path(@item) %> | 
+            <%= link_to 'Destroy', admin_item_path(@item), method: :delete, data: { confirm: 'Are you sure?' } %> | 
 						<%= link_to 'Back', items_path %>
 
 					</div>
@@ -59,4 +58,12 @@
 		</div>
 	</div>
 	<!--================End Single Product Area =================-->
+
+
+
+
+
+<br>
+
+
 

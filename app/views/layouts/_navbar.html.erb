@@ -19,8 +19,18 @@
             <a class="navbar-brand logo_h"><%= image_tag 'drapeau-breton.png', class: "logo" %></a>
 
               <div class="navbar-collapse offset" >
-                <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item"><%= link_to "Home", items_path, class: "nav-link nav-item active" %></li>
+              <ul class="nav navbar-nav ml-auto">
+            <% if current_user != nil %>
+              <% if current_user.is_admin %>
+                <li class="nav-item">
+                  <%= link_to 'New item', new_admin_item_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'List Users', admin_users_path, class: "nav-link" %>
+                </li>
+              <% end %>
+            <% end %>
+                <li class="nav-item"><%= link_to "Home", items_path, class: "nav-link nav-item active" %></li>
                 <% if !user_signed_in? %>
                   <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">S'inscrire / Se connecter</a>

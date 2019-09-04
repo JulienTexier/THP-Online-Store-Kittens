@@ -2,7 +2,11 @@
 <div class="col-lg-3 col-md-6">
     <div class="single-product">
         <%= link_to item_path(item) do %>
-          	<%= image_tag item.image_url, class:"img-fluid"%>  
+        <%if item.cat_picture.attached?%>
+          	<%= image_tag item.cat_picture, class:"img-fluid"%>  
+        <%else%>
+            <br>
+        <% end %>   
             <div class="product-details">
                 <h6><%= item.title %></h6>
                 <div class="price">
