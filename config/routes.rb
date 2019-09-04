@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 	root 'items#index'
   resources :join_items_orders
-  resources :orders
 	resources :join_table_carts_items
   resources :carts, except: [:index, :new]
-  resources :profile, only: [:show, :edit, :update]
+  resources :profile, only: [:show, :edit, :update] do 
+    resources :orders
+  end
   resources :items
   devise_for :users, controllers: {
     registrations: 'registrations'
