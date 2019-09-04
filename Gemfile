@@ -65,6 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'jquery-rails'
-gem 'mailjet'
 gem 'table_print'
 gem 'letter_opener'
