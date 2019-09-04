@@ -1,12 +1,28 @@
-<html>
-  <body>
+  <!-- Start Banner Area -->
+  <section class="banner">
+    <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+        <div class="col-first">
+          <h1>Edit login credentials</h1>
+          <nav class="d-flex align-items-center">
+            <a href="<%= items_path %>">Home<span class="lnr lnr-arrow-right"></span></a>
+            <a href="<%= profile_path(@user) %>"> Profile <span class="lnr lnr-arrow-right"></span></a>
+            <a href="">Product Details</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Banner Area -->
+
+
 
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <br><br><br>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          </br></br></br><h1 class="h3 mb-3 font-weight-normal text-center">EDITER MES IDENTIFIANTS DE CONNEXION</h1>
+          
           <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="form-group">
@@ -55,5 +71,5 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <div class="space"></div>
+
