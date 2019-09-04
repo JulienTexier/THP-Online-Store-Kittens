@@ -4,6 +4,7 @@
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
+                <br><br><br>
                     <h1>Shopping Cart</h1>
                     <nav class="d-flex align-items-center">
                     	
@@ -40,12 +41,16 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>
 
                                 </td>
                                 <td>
+
+                                <td>
+                                </td>
 
                                 </td>
                                 <td>
@@ -65,11 +70,13 @@
                                 </td>
                                 <td>
 
+                                
+
                                 </td>
-                                <td>
-                                    <div class="checkout_btn_inner d-flex align-items-center">
-                                        <a class="gray_btn" href="#">Continue Shopping</a>
-                                        <%= button_to "Proceed to checkout", orders_path, class:"primary-btn" %>
+                                <td colspan="3">
+                                    <div class="checkout_btn_inner d-flex align-items-center ">
+                                        <a class="gray_btn" href="<%= items_path %>">Continue Shopping</a>
+                                        <%= link_to "Proceed to checkout", new_order_path, method: :get, class:"primary-btn" %>
                                     </div>
                                 </td>
                             </tr>
@@ -81,4 +88,4 @@
     </section>
     <!--================End Cart Area =================-->
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Edit', edit_cart_path(@cart) %> 
