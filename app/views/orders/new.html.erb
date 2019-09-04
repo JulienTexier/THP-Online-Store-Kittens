@@ -1,5 +1,36 @@
-<h1>New Order</h1>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<div class="container border bg-white rounded">
+     <div class="row">
+          <div class="col-md-6 offset-md-3 text-center">
+            <%= form_tag  profile_orders_path(current_user) do %>
+                  <article>
+                    <% if flash[:error].present? %>
+                        <div id="error_explanation">
+                            <p><%= flash[:error] %></p>
+                        </div>
+                    <% end %>
+                    <label class="amount">
+                          <span>Prix à payer: <strong><%= current_user.cart.subtotal %>€</strong></span>
+                    </label>
+                  </article>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="Order"
+                        data-amount="<%= current_user.cart.subtotal * 100%>"
+                        data-locale="fr"
+                        data-currency="eur">
+                </script>
+            <% end %>
+            <br>
+            <%= link_to "Retour au panier", cart_path(current_user.cart) %>
+       </div>
+     </div>
+</div>
 
-<%= render 'form', order: @order %>
-
-<%= link_to 'Back', orders_path %>

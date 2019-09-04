@@ -30,29 +30,30 @@ class JoinTableCartsItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @joint_table_carts_item = current_user.cart.add_item(@item)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @joint_table_carts_item.save
-        format.html { redirect_to @joint_table_carts_item.cart, notice: 'Item added to cart.' }
-        format.json { render :show, status: :created, location: @joint_table_carts_item }
+      	redirect_to @joint_table_carts_item.cart
+        # format.html { redirect_to @joint_table_carts_item.cart, notice: 'Item added to cart.' }
+        # format.json { render :show, status: :created, location: @joint_table_carts_item }
       else
-        format.html { render :new }
-        format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
+        # format.html { render :new }
+        # format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /join_table_carts_items/1
   # PATCH/PUT /join_table_carts_items/1.json
   def update
-    respond_to do |format|
-      if @joint_table_carts_item.update(joint_table_carts_item_params)
-        format.html { redirect_to @joint_table_carts_item, notice: 'Join items order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @joint_table_carts_item }
-      else
-        format.html { render :edit }
-        format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
-      end
-    end
+  #   respond_to do |format|
+  #     if @joint_table_carts_item.update(joint_table_carts_item_params)
+  #       format.html { redirect_to @joint_table_carts_item, notice: 'Join items order was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @joint_table_carts_item }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
+  #     end
+  #   end
   end
 
   # DELETE /join_table_carts_items/1
