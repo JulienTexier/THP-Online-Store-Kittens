@@ -1,0 +1,66 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>User n°<%= @user.id %></h1>
+
+<%
+=begin%>
+ <p>
+  <%if @user.user_pic.attached?%>
+      <%= image_tag @user.user_pic.variant(resize: "350x350"), alt: 'event_pic', class:"w-25 z-depth-1-halfavatar-pic" %>
+  <%end%>
+</p> 
+<%
+=end%>
+
+
+    <%= link_to 'Edit', edit_admin_user_path(@user) %> |
+
+
+    <%= link_to "Editer email / password", edit_user_registration_path %>
+
+
+
+<table class="table">
+  <tbody>
+
+      <tr>
+        <th scope="row" class="table-info">id</th>
+        <td><%= @user.id %></td>
+      </tr>
+      <tr>
+        <th scope="row" class="table-info">email</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th scope="row" class="table-info">first_name</th>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr>
+        <th scope="row" class="table-info">last_name</th>
+        <td><%= @user.last_name %></td>
+      </tr>
+      <tr>
+        <th scope="row" class="table-info">is_admin</th>
+        <td><span class="bg-<% if @user.is_admin %>success<% else %>danger<% end %> rounded-circle", style="height: 20px; width: 20px; display: inline-block;"></span></td>
+      </tr>
+      <tr>
+        <th scope="row" class="table-info">description</th>
+        <td><%= @user.description %></td>
+      </tr>
+      <tr>
+        
+        
+        
+        <td><%= link_to 'Destroy', admin_user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+ 
+  </tbody>
+</table>
