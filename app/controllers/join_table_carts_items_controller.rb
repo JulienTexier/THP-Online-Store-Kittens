@@ -63,7 +63,8 @@ class JoinTableCartsItemsController < ApplicationController
     @joint_table_carts_item.destroy
     respond_to do |format|
       format.html { redirect_to cart_path(current_user.cart), notice: 'Join items order was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { }
+
     end
   end
 
