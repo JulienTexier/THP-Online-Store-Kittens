@@ -44,8 +44,8 @@ class OrdersController < ApplicationController
       if @order.save
         # current_user.cart.items.each do |item|
         #   @join = JoinItemsOrder.create(order_id: @order.id, item_id: item.id)
-        # end
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        # end      
+        format.html { redirect_to profile_order_path(current_user, @order), notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
