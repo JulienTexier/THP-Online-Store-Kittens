@@ -76,7 +76,7 @@
                                 <td colspan="3">
                                     <div class="checkout_btn_inner d-flex align-items-center ">
                                         <a class="gray_btn" href="<%= items_path %>">Continue Shopping</a>
-                                        <%= link_to "Proceed to checkout", new_order_path, method: :get, class:"primary-btn" %>
+                                        <%= link_to "Proceed to checkout", new_profile_order_path(current_user), method: :get, class:"primary-btn" %>
                                     </div>
                                 </td>
                             </tr>
