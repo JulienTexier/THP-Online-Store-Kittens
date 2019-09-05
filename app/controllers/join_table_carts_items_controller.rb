@@ -30,16 +30,17 @@ class JoinTableCartsItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @joint_table_carts_item = current_user.cart.add_item(@item)
 
-    # respond_to do |format|
+    respond_to do |format|
       if @joint_table_carts_item.save
-      	redirect_to @joint_table_carts_item.cart
-        # format.html { redirect_to @joint_table_carts_item.cart, notice: 'Item added to cart.' }
-        # format.json { render :show, status: :created, location: @joint_table_carts_item }
+      	#redirect_to @joint_table_carts_item.cart
+         format.html { redirect_to @joint_table_carts_item.cart, notice: 'Item added to cart.' }
+         format.json { render :show, status: :created, location: @joint_table_carts_item }
+         format.js {}
       else
-        # format.html { render :new }
-        # format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
+         format.html { render :new }
+         format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
       end
-    # end
+    end
   end
 
   # PATCH/PUT /join_table_carts_items/1
@@ -63,7 +64,8 @@ class JoinTableCartsItemsController < ApplicationController
     @joint_table_carts_item.destroy
     respond_to do |format|
       format.html { redirect_to cart_path(current_user.cart), notice: 'Join items order was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { }
+
     end
   end
 

@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find(params[:id])
   end
 
   # GET /items/new
@@ -24,8 +25,10 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    puts "$"*100
+    puts item_params
     @item = Item.new(item_params)
-
+    # @item.cat_picture.attach(params[:cat_picture])
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -55,6 +58,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     @item.destroy
+    @item.cat_picture.purge
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,6 +73,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description, :price, :image_url)
+      params.require(:item).permit(:title, :description, :price, :image_url, :cat_picture)
     end
 end
