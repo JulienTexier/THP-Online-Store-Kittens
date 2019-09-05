@@ -14,7 +14,7 @@
                 </div>
         <% end %>   
           	<div class="prd-bottom">
-          		<%= link_to join_table_carts_items_path(item_id: item), method: :post, class:"social-info" do %>
+          		<%= link_to join_table_carts_items_path(item_id: item), method: :post, class:"social-info", remote: true do %>
           			<span><i class="fas fa-shopping-cart"></i></span>
               		<p class="hover-text">add to bag</p>
           		<% end %>
