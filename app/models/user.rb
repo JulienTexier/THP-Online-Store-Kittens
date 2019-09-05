@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_one_attached :user_pic
 	after_create :welcome_send
 
 	  def welcome_send
