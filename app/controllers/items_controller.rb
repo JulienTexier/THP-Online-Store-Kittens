@@ -25,8 +25,6 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    puts "$"*100
-    puts item_params
     @item = Item.new(item_params)
     # @item.cat_picture.attach(params[:cat_picture])
     respond_to do |format|

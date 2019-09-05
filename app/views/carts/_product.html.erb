@@ -14,7 +14,7 @@
     </td>
     <td>
         <div class="product_count">
-            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
+            <input type="text" name="qty" id="sst" maxlength="12" value="<%= cart_item.quantity %>" title="Quantity:"
                 class="input-text qty">
             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
@@ -23,7 +23,9 @@
         </div>
     </td>
     <td>
-        <h5>$<%= item.price %></h5>
+        <h5>
+        	$<%= cart_item.total_price %>
+        </h5>
     </td>
     <td>
     	<%= link_to join_table_carts_item_path(current_user.cart.join_table_carts_items.find_by(item: item)), method: :delete, remote: true do %>
