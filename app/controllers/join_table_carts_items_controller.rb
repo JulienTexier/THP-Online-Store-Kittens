@@ -48,17 +48,17 @@ class JoinTableCartsItemsController < ApplicationController
   # PATCH/PUT /join_table_carts_items/1
   # PATCH/PUT /join_table_carts_items/1.json
   def update
-  #   respond_to do |format|
-  #     if @joint_table_carts_item.update(joint_table_carts_item_params)
-  #       format.html { redirect_to @joint_table_carts_item
-  # flash[:success] = 'Join items order was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @joint_table_carts_item }
-  #     else
-  #       format.html { render :edit 
-  # flash.now[:error] = @joint_table_carts_item.errors.full_messages.to_sentence}
-  #       format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
-  #     end
-  #   end
+  	if params[:change] == "increase"
+  		@joint_table_carts_item.quantity += 1
+  	elsif params[:change] == "decrease" && @joint_table_carts_item.quantity > 0
+  		@joint_table_carts_item.quantity -= 1
+  	end
+  	@joint_table_carts_item.save
+
+  	respond_to do |format|
+      format.html { redirect_to cart_path(current_user.cart) }
+      format.js { }
+    end
   end
 
   # DELETE /join_table_carts_items/1
