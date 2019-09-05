@@ -183,7 +183,7 @@ a {
 }
 
 a:hover {
-    color:   #FF4500;
+    color:   #ff6000;
     text-decoration: underline
 }
 
@@ -5189,45 +5189,45 @@ input[type=submit].btn-block {
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb
+    color: white;
+    background-color: #8F97CF;
+    border-color: #8F97CF;
 }
 
 .alert-success hr {
-    border-top-color: #b1dfbb
+    border-top-color: #8F97CF;
 }
 
 .alert-success .alert-link {
-    color: #0b2e13
+    color: white;
 }
 
 .alert-info {
-    color: #0c5460;
-    background-color: #d1ecf1;
-    border-color: #bee5eb
+    color: white;
+    background-color: #ff9b00;
+    border-color: #ff9b00;
 }
 
 .alert-info hr {
-    border-top-color: #abdde5
+    border-top-color: #ff9b00;
 }
 
 .alert-info .alert-link {
-    color: #062c33
+    color: white;
 }
 
 .alert-warning {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba
+    color: white;
+    background-color: #ff6000;
+    border-color: #ff6000;
 }
 
 .alert-warning hr {
-    border-top-color: #ffe8a1
+    border-top-color: #ff6000;
 }
 
 .alert-warning .alert-link {
-    color: #533f03
+    color: white;
 }
 
 .alert-danger {
