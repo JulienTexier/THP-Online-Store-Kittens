@@ -17,12 +17,13 @@
   <div class="space"></div>  
     <div class="container text-center">
 
-        <%if @user.user_pic.attached?%>
-          	<%= image_tag @user.user_pic, alt:"marche pas", class:"img-fluid"%>  
-        <% end %> 
+       
 
         <div class="card">
           <div class="card-body">
+             <%if @user.user_pic.attached?%> zqksnlmlknq
+            <%= image_tag @user.user_pic, alt:"marche pas", class:"img-fluid"%>  
+            <% end %> 
               <h3 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h3>
               <p class="card-text">
                 </br>Description : <%= @user.description %>
