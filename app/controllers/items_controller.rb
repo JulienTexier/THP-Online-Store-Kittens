@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id])
   end
 
   # GET /items/new
@@ -25,16 +24,16 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    puts "$"*100
-    puts item_params
     @item = Item.new(item_params)
     # @item.cat_picture.attach(params[:cat_picture])
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item 
+        flash[:success] = 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new }
+        format.html { flash[:error] = @item.errors.full_messages.to_sentence 
+        render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -45,10 +44,12 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to @item 
+        flash[:success] = 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
-        format.html { render :edit }
+        format.html { flash[:error] = @item.errors.full_messages.to_sentence
+        render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +61,8 @@ class ItemsController < ApplicationController
     @item.destroy
     @item.cat_picture.purge
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to items_url 
+      flash[:success] = 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,7 +70,7 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
