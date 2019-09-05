@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   has_one_attached :cat_picture
   validates :title, presence: true, length: { in: 3..100 }
   validates :description, presence: true, length: { minimum: 10 }
