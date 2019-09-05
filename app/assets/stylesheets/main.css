@@ -8,6 +8,15 @@
 /* Section Gaps css
 ============================================================================================ */
 
+.img-size {
+
+  object-fit: cover; 
+    width:  250px;
+    height: 170px;
+    margin-bottom: 20px;
+
+}
+
 
 .logo {
   width: 80px!important;
@@ -84,9 +93,10 @@
       display: none; } }
 
 .h1home {
+  padding-top: 40px;
   color: white;
-  font-size: 120px;
-  line-height: 120px;
+  font-size: 100px;
+  line-height: 110px;
 }
 
 .text-banner{
@@ -1602,7 +1612,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 50px; }
   .single-product img {
     margin-bottom: 20px;
-    width: 100%; }
+     }
   .single-product .product-details h6 {
     font-size: 16px;
     text-transform: uppercase; }
@@ -4768,7 +4778,7 @@ label {
         color: #777777; }
 
 .order_details_table {
-  background: #e5ecee;
+  background: rgba(255, 140, 0, 0.2);
   padding: 30px;
   margin-top: 75px; }
   @media (min-width: 767px) {

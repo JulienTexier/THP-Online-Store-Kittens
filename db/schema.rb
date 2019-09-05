@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_112351) do
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
     t.index ["item_id"], name: "index_join_items_orders_on_item_id"
     t.index ["order_id"], name: "index_join_items_orders_on_order_id"
   end

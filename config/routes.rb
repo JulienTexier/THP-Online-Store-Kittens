@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :carts, except: [:index, :new]
   resources :profile, only: [:show, :edit, :update] do 
     resources :orders, except: [:destroy]
-    resources :user_pics, only: [:create]
   end
   resources :items, only: [:index, :show]
   devise_for :users, controllers: {

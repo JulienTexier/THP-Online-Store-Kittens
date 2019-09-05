@@ -24,6 +24,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    @user = current_user
+    @email = current_user.email
     @amount = (current_user.cart.subtotal * 100).to_i
   
     customer = Stripe::Customer.create({
@@ -39,13 +41,19 @@ class OrdersController < ApplicationController
     })
 
     @order = Order.new(user: current_user, items: current_user.cart.items)
-    current_user.cart.items.clear
+
+    
     respond_to do |format|
       if @order.save
-        # current_user.cart.items.each do |item|
-        #   @join = JoinItemsOrder.create(order_id: @order.id, item_id: item.id)
-        # end      
-        format.html { redirect_to profile_order_path(current_user, @order) }
+      	current_user.cart.join_table_carts_items.each do |cart_item|
+      		item = cart_item.item
+      		quantity = cart_item.quantity
+      		join = JoinItemsOrder.find_by(item: item, order: @order)
+      		join.quantity = quantity
+      		join.save
+      	end
+  			current_user.cart.items.clear
+        format.html { redirect_to profile_order_path(current_user, @order), notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { flash.now[:error] = @order.errors.full_messages.to_sentence
@@ -96,4 +104,5 @@ class OrdersController < ApplicationController
     def order_params
       params.fetch(:order, {})
     end
+    
 end
