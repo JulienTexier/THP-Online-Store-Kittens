@@ -3,7 +3,7 @@ class Order < ApplicationRecord
 	after_create :new_order_send
 
   belongs_to :user
-  has_many :join_items_orders
+  has_many :join_items_orders, dependent: :destroy
   has_many :items, through: :join_items_orders
 
 	def subtotal
