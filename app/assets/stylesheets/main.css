@@ -1462,7 +1462,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0; }
 
 .features-inner {
-  box-shadow: 0 10px 30px rgb(143,156,207, 0.5);
+  box-shadow: 0 10px 30px rgba(143,156,207, 0.5);
   padding: 40px 0; }
 
 .single-features {
