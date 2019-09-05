@@ -45,10 +45,11 @@ class OrdersController < ApplicationController
         # current_user.cart.items.each do |item|
         #   @join = JoinItemsOrder.create(order_id: @order.id, item_id: item.id)
         # end      
-        format.html { redirect_to profile_order_path(current_user, @order), notice: 'Order was successfully created.' }
+        format.html { redirect_to profile_order_path(current_user, @order)
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { flash.now[:error] = @order.errors.full_messages.to_sentence
+        render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -63,10 +64,12 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order
+        flash[:success] = 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
-        format.html { render :edit }
+        format.html { flash.now[:error] = @order.errors.full_messages.to_sentence
+        render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -77,7 +80,8 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url
+      flash[:success] = 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
