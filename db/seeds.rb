@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Item.destroy_all
+JoinItemsOrder.destroy_all
+JoinTableCartsItem.destroy_all
+Order.destroy_all
+Cart.destroy_all 
+User.destroy_all
 # User.destroy_all
 # #Création de pierre michel
 # email = "teamrennes@contact.bzh"

@@ -50,7 +50,7 @@ class JoinTableCartsItemsController < ApplicationController
   def update
   	if params[:change] == "increase"
   		@joint_table_carts_item.quantity += 1
-  	elsif params[:change] == "decrease" && @joint_table_carts_item.quantity > 0
+  	elsif params[:change] == "decrease" && @joint_table_carts_item.quantity > 1
   		@joint_table_carts_item.quantity -= 1
   	end
   	@joint_table_carts_item.save
