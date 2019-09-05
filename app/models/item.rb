@@ -8,4 +8,6 @@ class Item < ApplicationRecord
 
   has_many :join_table_carts_items, dependent: :destroy
 	has_many :carts, through: :join_table_carts_items
+	has_many :join_items_orders, dependent: :destroy
+	has_many :orders, through: :join_items_orders
 end
