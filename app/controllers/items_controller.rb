@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id])
   end
 
   # GET /items/new
@@ -25,8 +24,6 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    puts "$"*100
-    puts item_params
     @item = Item.new(item_params)
     # @item.cat_picture.attach(params[:cat_picture])
     respond_to do |format|
@@ -73,7 +70,7 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,4 +1,22 @@
   <!-- start banner Area -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script>
+  $(document).ready(function() {
+    $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+      var page = $(this).attr('href'); // Page cible
+      var speed = 750; // Durée de l'animation (en ms)
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+      return false;
+    });
+  });
+</script>
+
 <p id="confirm-add-to-cart" class="alert alert-success collapse"></p>
 <style>
 	#confirm-add-to-cart {
@@ -29,17 +47,13 @@
               <div class="banner-content">
                 <div class="h1home">Cat new <br>Collection!</div>
                 <div class="add-bag d-flex align-items-center">
-                  <a class="add-btn" id="myScrollspy" href="#cat_list"><i class="fas fa-arrow-down"></i></a>
-                  <span class="text-banner text-uppercase">Discover our pictures of cats</span>
+                  <a class="add-btn js-scrollTo" id="myScrollspy" href="#cat_list" ><i class="fas fa-arrow-down"></i></a>
+                  <span class="text-banner text-uppercase"> CLICK to discover our pictures</span>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-7">
-              <div class="banner-img">
-                <img class="img-fluid" src="img/banner/banner-img.png" alt="">
-              </div>
-            </div>
+
 
           </div>
           <div class="row single-slide">
@@ -128,23 +142,4 @@
 
 
 
-<script type="text/javascript">
-$(function() {
-    /**
-    * Smooth scrolling to page anchor on click
-    **/
-    $("a[href*='#']:not([href='#'])").click(function() {
-        if (
-            location.hostname == this.hostname
-            && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
-        ) {
-            var anchor = $(this.hash);
-            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-            if ( anchor.length ) {
-                $("html, body").animate( { scrollTop: anchor.offset().top }, 900);
-            }
-        }
-    });
-});
-</script>
 
