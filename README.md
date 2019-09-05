@@ -1,7 +1,7 @@
 # ___ONLINE STORE KITTEN___ 
 
 ### Bievenue dans notre project du Events Project 
->Created by Julien TEXIER & Paul MOUCHEL, à *Rennes*
+>Created by la team Rennes, Julien TEXIER, Paul MOUCHEL, Sarah BOUCHIR et Samuel Deneubourg
 >
 
 </br>
@@ -22,14 +22,8 @@ rails server
 
 Puis rendez-vous sur votre navigateur pour acceder au site (http://localhost:3000)
 
-Pour vous logger, vous pouvez utiliser l'utilisateur Pierre Michel avec les identifiants suivants:
-Email : pierre.michel@yopmail.com
-Password: azerty
-
-Ou créer votre propre compte !
-
 Vous pouvez aussi consulter la version en ligne à l'adresse :
-https://the-events-project.herokuapp.com/
+https://marketplace-production.herokuapp.com/
 
 ENJOY !
 
