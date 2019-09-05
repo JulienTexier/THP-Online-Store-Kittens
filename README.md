@@ -1,24 +1,29 @@
-# README
+# ___ONLINE STORE KITTEN___ 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Bievenue dans notre project du Events Project 
+>Created by la team Rennes, Julien TEXIER, Paul MOUCHEL, Sarah BOUCHIR et Samuel Deneubourg
+>
 
-Things you may want to cover:
+</br>
 
-* Ruby version
+________________________________________________________
+</br>
 
-* System dependencies
+# ___Comment ça marche___ :robot:
 
-* Configuration
+Pour démarrer l'application, lancez les commandes suivantes :
+```
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails server
+```
 
-* Database creation
+Puis rendez-vous sur votre navigateur pour acceder au site (http://localhost:3000)
 
-* Database initialization
+Vous pouvez aussi consulter la version en ligne à l'adresse :
+https://marketplace-production.herokuapp.com/
 
-* How to run the test suite
+ENJOY !
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
