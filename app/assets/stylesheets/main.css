@@ -13,7 +13,9 @@
   width: 80px!important;
 }
 
-
+.space {
+  height: 150px;
+}
 
 
 .sticky {
@@ -1412,10 +1414,10 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       margin: 0 10px; }
   .breadcrumb-banner .col-first {
-    padding-right: 15px; }
+    padding-right: 55px; }
     @media (max-width: 1680px) {
       .breadcrumb-banner .col-first {
-        padding-right: 40px; } }
+        padding-right: 80px; } }
     @media (max-width: 991px) {
       .breadcrumb-banner .col-first {
         width: 48%; } }
