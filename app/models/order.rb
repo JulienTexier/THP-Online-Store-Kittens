@@ -16,6 +16,7 @@ class Order < ApplicationRecord
 
 	def new_order_send
 		UserMailer.new_order_email(self).deliver_now
+		UserMailer.new_order_email_admin(self).deliver_now
 	end
 
 end
