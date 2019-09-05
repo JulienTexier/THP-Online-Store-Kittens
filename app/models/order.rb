@@ -1,4 +1,7 @@
 class Order < ApplicationRecord
+
+	after_create :new_order_send
+
   belongs_to :user
   has_many :join_items_orders
   has_many :items, through: :join_items_orders
@@ -11,6 +14,13 @@ class Order < ApplicationRecord
 		return price
 	end
 
+
+	def new_order_send
+		UserMailer.new_order_email(self).deliver_now
+		UserMailer.new_order_email_admin(self).deliver_now
+	end
+
+
 	def number_of_articles
 		articles = 0
 		join_items_orders.each do |join|
@@ -18,4 +28,5 @@ class Order < ApplicationRecord
 		end
 		return articles
 	end
+
 end

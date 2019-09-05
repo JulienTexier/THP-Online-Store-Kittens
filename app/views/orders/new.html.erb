@@ -36,6 +36,9 @@
                           <h3>Price to pay : <br><strong><%= current_user.cart.subtotal %>€</strong></h3>
                     </label>
                   </article>
+                  <% if current_user.cart.subtotal <= 0 %>
+                  <%=link_to "Zero euro? Nah..", items_path, class:"primary-btn" %>
+                  <% else %>
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                         data-description="Order"
@@ -43,6 +46,7 @@
                         data-locale="fr"
                         data-currency="eur">
                 </script>
+                <% end %>
             <% end %>
             <br>
             <%= link_to "Retour au panier", cart_path(current_user.cart) %>
