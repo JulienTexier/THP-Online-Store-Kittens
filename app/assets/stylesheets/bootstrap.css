@@ -176,14 +176,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #8F97CF;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #0056b3;
+    color:   #FF4500;
     text-decoration: underline
 }
 
@@ -5131,11 +5131,13 @@ input[type=submit].btn-block {
 }
 
 .alert {
-    position: relative;
+    position: absolute;
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: .25rem
+    border-radius: .25rem;
+    width: 100%;
+    text-align: center;
 }
 
 .alert-heading {
