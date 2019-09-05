@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
         # current_user.cart.items.each do |item|
         #   @join = JoinItemsOrder.create(order_id: @order.id, item_id: item.id)
         # end      
-        format.html { redirect_to profile_order_path(current_user, @order)
+        format.html { redirect_to profile_order_path(current_user, @order) }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { flash.now[:error] = @order.errors.full_messages.to_sentence
