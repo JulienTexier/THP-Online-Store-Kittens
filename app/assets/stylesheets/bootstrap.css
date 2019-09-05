@@ -5131,11 +5131,13 @@ input[type=submit].btn-block {
 }
 
 .alert {
-    position: relative;
+    position: absolute;
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: .25rem
+    border-radius: .25rem;
+    width: 100%;
+    text-align: center;
 }
 
 .alert-heading {
