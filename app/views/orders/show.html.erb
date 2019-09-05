@@ -43,8 +43,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							<% @order.items.each do |item| %>
-								<%= render 'item', item: item %>
+							<% @order.join_items_orders.each do |item_order| %>
+								<%= render 'item', item: item_order.item, item_order: item_order %>
 							<% end %>				
 							<tr>
 								<td>

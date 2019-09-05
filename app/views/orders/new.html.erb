@@ -1,11 +1,26 @@
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+  <!-- Start Banner Area -->
+  <section class="banner">
+    <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+        <div class="col-first">
+          <h1>Order</h1>
+          <nav class="d-flex align-items-center">
+            <a href="<%= items_path %>">Home<span class="lnr lnr-arrow-right"></span></a>
+            <% if current_user %>
+                      <a href="<%= cart_path(current_user.cart)%>">Cart<span class="lnr lnr-arrow-right"></span></a>
+                    <% else %>
+                      <a href="<%= new_user_session_path %>">Cart<span class="lnr lnr-arrow-right"></span></a>
+                    <% end %>
+            <a href="">Paiment order</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Banner Area -->
+
+<div class="space"></div>
+
 <div class="container border bg-white rounded">
      <div class="row">
           <div class="col-md-6 offset-md-3 text-center">
@@ -16,8 +31,9 @@
                             <p><%= flash[:error] %></p>
                         </div>
                     <% end %>
+                    <br><br>
                     <label class="amount">
-                          <span>Prix à payer: <strong><%= current_user.cart.subtotal %>€</strong></span>
+                          <h3>Price to pay : <br><strong><%= current_user.cart.subtotal %>€</strong></h3>
                     </label>
                   </article>
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -30,7 +46,8 @@
             <% end %>
             <br>
             <%= link_to "Retour au panier", cart_path(current_user.cart) %>
+            <br><br>
        </div>
      </div>
 </div>
-
+<div class="space"></div>
