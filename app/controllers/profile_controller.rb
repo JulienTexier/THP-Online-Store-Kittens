@@ -14,10 +14,9 @@ class ProfileController < ApplicationController
   	current_user.update(profile_params)
     
       if current_user.save
-        flash[:success] = 'You account was successfully updated.'
         redirect_to profile_path(current_user.id)
       else
-        flash.now[:error] = @order.errors.full_messages.to_sentence
+        flash.now[:danger] = "Couldn't save."
         render :edit
       end
   	

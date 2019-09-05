@@ -33,13 +33,11 @@ class JoinTableCartsItemsController < ApplicationController
     respond_to do |format|
       if @joint_table_carts_item.save
       	#redirect_to @joint_table_carts_item.cart
-         format.html { redirect_to @joint_table_carts_item.cart
-         flash[:success] = 'Item added to cart.' }
+         format.html { redirect_to @joint_table_carts_item.cart, notice: 'Item added to cart.' }
          format.json { render :show, status: :created, location: @joint_table_carts_item }
          format.js {}
       else
-         format.html { flash.now[:error] = @joint_table_carts_item.errors.full_messages.to_sentence
-         render :new }
+         format.html { render :new }
          format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
       end
     end
@@ -50,12 +48,10 @@ class JoinTableCartsItemsController < ApplicationController
   def update
   #   respond_to do |format|
   #     if @joint_table_carts_item.update(joint_table_carts_item_params)
-  #       format.html { redirect_to @joint_table_carts_item
-  # flash[:success] = 'Join items order was successfully updated.' }
+  #       format.html { redirect_to @joint_table_carts_item, notice: 'Join items order was successfully updated.' }
   #       format.json { render :show, status: :ok, location: @joint_table_carts_item }
   #     else
-  #       format.html { render :edit 
-  # flash.now[:error] = @joint_table_carts_item.errors.full_messages.to_sentence}
+  #       format.html { render :edit }
   #       format.json { render json: @joint_table_carts_item.errors, status: :unprocessable_entity }
   #     end
   #   end
@@ -67,8 +63,7 @@ class JoinTableCartsItemsController < ApplicationController
     #@cart = Cart.find(session[:cart_id])
     @joint_table_carts_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(current_user.cart)
-      flash[:success] = 'Join items order was successfully destroyed.' }
+      format.html { redirect_to cart_path(current_user.cart), notice: 'Join items order was successfully destroyed.' }
       format.js { }
 
     end

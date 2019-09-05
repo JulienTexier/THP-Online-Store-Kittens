@@ -28,12 +28,10 @@ class JoinItemsOrdersController < ApplicationController
 
     respond_to do |format|
       if @join_items_order.save
-        format.html { redirect_to @join_items_order
-        flash[:success] = 'Join items order was successfully created.' }
+        format.html { redirect_to @join_items_order, notice: 'Join items order was successfully created.' }
         format.json { render :show, status: :created, location: @join_items_order }
       else
-        format.html { flash.now[:error] = @join_items_order.errors.full_messages.to_sentence
-        render :new }
+        format.html { render :new }
         format.json { render json: @join_items_order.errors, status: :unprocessable_entity }
       end
     end
@@ -44,12 +42,10 @@ class JoinItemsOrdersController < ApplicationController
   def update
     respond_to do |format|
       if @join_items_order.update(join_items_order_params)
-        format.html { redirect_to @join_items_order
-        flash[:success] = 'Join items order was successfully updated.' }
+        format.html { redirect_to @join_items_order, notice: 'Join items order was successfully updated.' }
         format.json { render :show, status: :ok, location: @join_items_order }
       else
-        format.html { flash.now[:error] = @join_items_order.errors.full_messages.to_sentence
-        render :edit }
+        format.html { render :edit }
         format.json { render json: @join_items_order.errors, status: :unprocessable_entity }
       end
     end
@@ -60,8 +56,7 @@ class JoinItemsOrdersController < ApplicationController
   def destroy
     @join_items_order.destroy
     respond_to do |format|
-      format.html { redirect_to join_items_orders_url
-      flash[:success] = 'Join items order was successfully destroyed.' }
+      format.html { redirect_to join_items_orders_url, notice: 'Join items order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

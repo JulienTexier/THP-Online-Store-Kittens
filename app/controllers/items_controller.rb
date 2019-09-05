@@ -31,12 +31,10 @@ class ItemsController < ApplicationController
     # @item.cat_picture.attach(params[:cat_picture])
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item 
-        flash[:success] = 'Item was successfully created.' }
+        format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { flash[:error] = @item.errors.full_messages.to_sentence 
-        render :new }
+        format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -47,12 +45,10 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item 
-        flash[:success] = 'Item was successfully updated.' }
+        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
-        format.html { flash[:error] = @item.errors.full_messages.to_sentence
-        render :edit }
+        format.html { render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -64,8 +60,7 @@ class ItemsController < ApplicationController
     @item.destroy
     @item.cat_picture.purge
     respond_to do |format|
-      format.html { redirect_to items_url 
-      flash[:success] = 'Item was successfully destroyed.' }
+      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
