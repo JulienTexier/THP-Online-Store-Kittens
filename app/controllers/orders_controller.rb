@@ -24,6 +24,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    @user = current_user
+    @email = current_user.email
     @amount = (current_user.cart.subtotal * 100).to_i
   
     customer = Stripe::Customer.create({
