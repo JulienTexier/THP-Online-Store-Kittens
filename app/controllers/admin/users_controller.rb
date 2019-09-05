@@ -31,10 +31,12 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to admin_user_path(@user)
+        flash[:success] = 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { flash.now[:error] = @user.errors.full_messages.to_sentence
+        render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -45,10 +47,12 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_user_path(@user)
+        flash[:success] = 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
+        format.html { flash.now[:error] = @user.errors.full_messages.to_sentence
+        render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -59,7 +63,8 @@ class Admin::UsersController < AdminController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_path, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to admin_users_path
+      flash[:success] = 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
