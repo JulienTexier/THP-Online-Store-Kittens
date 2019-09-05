@@ -1,42 +1,11 @@
+<div class="space"></div>
+
+
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-    <br><br>
-    <h1 class="h3 mb-3 font-weight-normal text-center">Modifier les informations</h1>
-  </div>
-  </div>
+
   <div  class="row">
-    <div class="col-md-6">
-      <br><br>
-      <div class="text-center">
-
-        <style>
-          .upload-btn-wrapper {
-          position: relative;
-          overflow: hidden;
-          display: inline-block;
-        }
-
-        .btn-upload {
-          border: 2px solid gray;
-          padding: 8px 20px;
-          border-radius: 8px;
-          font-size: 20px;
-          font-weight: bold;
-        }
-
-        .upload-btn-wrapper input[type=file] {
-          font-size: 100px;
-          position: absolute;
-          left: 0;
-          top: 0;
-          opacity: 0;
-        }
-        </style>
-
-      </div>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-6 offset-3">
       <br><br>
       <%= form_with(model: [:admin, @user], local: true) do |f| %>
         <% if user.errors.any? %>
@@ -77,4 +46,4 @@
   </div>
 </div>
 
-
+<div class="space"></div>

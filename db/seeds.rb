@@ -7,10 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Item.destroy_all
+# User.destroy_all
+# #Création de pierre michel
+# email = "teamrennes@contact.bzh"
+# password = "rennes" #password très safe, je recommande vivement
+# User.create(email:email, password: password, is_admin: true)
+
 
 20.times do 
 	Item.create(title: Faker::Book.title, description: Faker::Movie.quote, price: Faker::Number.decimal(l_digits: 2))
 end
 
-
-# image_url: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "bmp", set: "set4")
