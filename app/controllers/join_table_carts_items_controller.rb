@@ -27,7 +27,7 @@ class JoinTableCartsItemsController < ApplicationController
   # POST /join_table_carts_items
   # POST /join_table_carts_items.json
   def create
-    @item = Item.find(params[:item_id])
+    @item = Item.friendly.find(params[:item_id])
     @joint_table_carts_item = current_user.cart.add_item(@item)
 
     respond_to do |format|
