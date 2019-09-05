@@ -7,10 +7,10 @@
 		<p><%= link_to order.created_at, profile_order_path(current_user, order) %></p>
 	</td>
 	<td>
-		<p><%= order.number_of_articles %></p>
+		<p><%= link_to order.number_of_articles, profile_order_path(current_user, order) %></p>
 	</td>
 	<td>
-		<p><%= order.subtotal%>€</p>
+		<p><%= link_to "#{order.subtotal}€", profile_order_path(current_user, order) %></p>
 	</td>
 </tr>
 

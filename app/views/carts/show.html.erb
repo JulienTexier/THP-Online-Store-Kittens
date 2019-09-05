@@ -76,7 +76,11 @@
                                 <td colspan="3">
                                     <div class="checkout_btn_inner d-flex align-items-center ">
                                         <a class="gray_btn" href="<%= items_path %>">Continue Shopping</a>
+                                        <% if @cart.subtotal <= 0.00 %>
+                                        <%=link_to "Proceed to checkout", items_path, class:"primary-btn" %>
+                                        <% else %>
                                         <%= link_to "Proceed to checkout", new_profile_order_path(current_user), method: :get, class:"primary-btn" %>
+                                        <% end %>
                                     </div>
                                 </td>
                             </tr>
