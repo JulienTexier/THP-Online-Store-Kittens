@@ -20,8 +20,4 @@ class Cart < ApplicationRecord
 		end
 		return price
 	end
-
-	# def total_price
-  #   item.price.to_i * quantity.to_i
-  # end
 end
