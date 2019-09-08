@@ -25,5 +25,12 @@ Puis rendez-vous sur votre navigateur pour acceder au site (http://localhost:300
 Vous pouvez aussi consulter la version en ligne à l'adresse :
 https://marketplace-production.herokuapp.com/
 
+Il y a un petit soucis sur le Stripe, lorsque vous cliquez sur le "Pay with card", vous aurez deux messages d'erreurs, cliquez sur OK et recliquez sur boutton et ça marchera (sorry for that..)
+
+Pour se connecter en tant qu'admin: 
+
+email : teamrennes@contact.bzh
+mot de passe: rennes
+
 ENJOY !
 
