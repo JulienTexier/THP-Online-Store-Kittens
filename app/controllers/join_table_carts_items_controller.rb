@@ -28,7 +28,12 @@ class JoinTableCartsItemsController < ApplicationController
   # POST /join_table_carts_items.json
   def create
     @item = Item.friendly.find(params[:item_id])
-    @joint_table_carts_item = current_user.cart.add_item(@item)
+    if params[:quantity] == nil
+    	quantity = 1
+    else
+    	quantity = params[:quantity].to_i
+    end
+    @joint_table_carts_item = current_user.cart.add_item(@item, quantity)
 
     respond_to do |format|
       if @joint_table_carts_item.save

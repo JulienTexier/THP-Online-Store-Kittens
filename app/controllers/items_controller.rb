@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+  	@joint_table_carts_item = JoinTableCartsItem.new
   end
 
   # GET /items/new
