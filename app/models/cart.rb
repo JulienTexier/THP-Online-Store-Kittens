@@ -3,12 +3,15 @@ class Cart < ApplicationRecord
 	has_many :join_table_carts_items, dependent: :destroy
 	has_many :items, through: :join_table_carts_items
 
-	def add_item(item)
+	def add_item(item, quantity=1)
 		current_item = join_table_carts_items.find_by(item_id: item.id)
 		if current_item
 			current_item.increment(:quantity)
 		else
 			current_item = join_table_carts_items.new(item_id: item.id)
+		end
+		(quantity-1).times do
+			current_item.increment(:quantity)
 		end
 		current_item
 	end
